@@ -132,8 +132,9 @@ def handle_photo():
             list_info[-1]['arr']['type'].append('image')
     list_info.reverse()  # 翻转
     final_dict = {"list": list_info}
-    with io.open("E:/MyGithubSpace/hexo/source/photos/data.json","w",encoding='UTF-8') as fp:
-         json.dump(final_dict, fp)
+    with io.open("E:\\MyGithubSpace\\hexo\\source\\photos\\data.json","w",encoding='UTF-8') as fp:
+			fp.write(final_dict)
+			fp.close()
 
 def cut_photo():
     """裁剪算法
