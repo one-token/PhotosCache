@@ -98,6 +98,8 @@ def handle_photo():
     -----------
     最后将data.json文件存到博客的source/photos文件夹下
     '''
+
+    print("=====没有新文件需要压缩=======")
     src_dir, des_dir = "photos/", "min_photos/"
     file_list = list_img_file(src_dir)
     list_info = []
@@ -132,9 +134,9 @@ def handle_photo():
             list_info[-1]['arr']['type'].append('image')
     list_info.reverse()  # 翻转
     final_dict = {"list": list_info}
-    with io.open("E:\\MyGithubSpace\\hexo\\source\\photos\\data.json","w",encoding='UTF-8') as fp:
-			fp.write(final_dict)
-			fp.close()
+    with open("E:\\MyGithubSpace\\hexo\\source\\photos\\data.json","wb+",encoding='UTF-8') as fp:
+			fp.write(final_dict+"")
+			fp.close();
 
 def cut_photo():
     """裁剪算法
